@@ -1,0 +1,33 @@
+---
+- hosts: localhost
+  gather_facts: no
+
+  vars:
+    ## These variables would be generated dynamically as part of your workflow
+    tower_job_id: "810"
+    vm1_name: "gamora_01"
+    vm1_ip: "172.1.10.1"
+    vm2_name: "gamora_02"
+    vm2_ip: "172.1.10.2"
+
+  tasks:
+  
+    ## Here you run the automation tasks and capture the output as required to populate the payload
+
+    - name: Send a notification to Teams Channel
+      uri:
+        ## Use your own URL here
+        url: "https://dell.webhook.office.com/webhookb2/12345678-40cc-4c20-9228-f94320b65a82@945c199a..."
+        method: POST
+        body_format: json
+        body:
+          title: "IaaS provisioning job: {{ tower_job_id }}"
+          text: "IaaS request has completed. Details of VMs created:"
+          sections:
+            - facts:
+              - name : "{{ vm1_name }}"
+                value: "{{ vm1_ip }}"
+              - name : "{{ vm2_name }}"
+                value: "{{ vm2_ip }}"
+
+

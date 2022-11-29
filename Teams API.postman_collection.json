@@ -1,0 +1,76 @@
+{
+	"info": {
+		"_postman_id": "957de6f7-f181-4580-9e20-0299488e0cbb",
+		"name": "Teams API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2387182"
+	},
+	"item": [
+		{
+			"name": "Simple Card",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Title\": \"This is my first automated message\",\r\n    \"Text\": \"I wish things were always this easy :)\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://webhook.office.com/webhookb2/12345678-40cc-4c20-9228-f94320b65a82@945c199a-83a2-4e80-9f8c-5a91beabcdef/IncomingWebhook/12345aabca64490cbfb929e64545b773/a14600ad-5770-432e-b819-ce296b8e487c",
+					"protocol": "https",
+					"host": [
+						"webhook",
+						"office",
+						"com"
+					],
+					"path": [
+						"webhookb2",
+						"12345678-40cc-4c20-9228-f94320b65a82@945c199a-83a2-4e80-9f8c-5a91beabcdef",
+						"IncomingWebhook",
+						"12345aabca64490cbfb929e64545b773",
+						"a14600ad-5770-432e-b819-ce296b8e487c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Card with Facts",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"IaaS provisioning job: 810\",\r\n    \"text\": \"IaaS request has completed. Details of VMs created:\",\r\n    \"sections\": [\r\n        {\r\n            \"facts\": [\r\n                {\r\n                    \"name\": \"gamora_01\",\r\n                    \"value\": \"172.1.10.1\"\r\n                },\r\n                {\r\n                    \"name\": \"gamora_02\",\r\n                    \"value\": \"172.1.10.2\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://webhook.office.com/webhookb2/12345678-40cc-4c20-9228-f94320b65a82@945c199a-83a2-4e80-9f8c-5a91beabcdef/IncomingWebhook/12345aabca64490cbfb929e64545b773/a14600ad-5770-432e-b819-ce296b8e487c",
+					"protocol": "https",
+					"host": [
+						"webhook",
+						"office",
+						"com"
+					],
+					"path": [
+						"webhookb2",
+						"12345678-40cc-4c20-9228-f94320b65a82@945c199a-83a2-4e80-9f8c-5a91beabcdef",
+						"IncomingWebhook",
+						"12345aabca64490cbfb929e64545b773",
+						"a14600ad-5770-432e-b819-ce296b8e487c"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
